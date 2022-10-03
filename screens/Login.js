@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity } from 'react-native'
 import Field from '../components/Field';
 import Background from './Background';
 import { darkGreen } from './Constants';
-import Btn from "./Btn"
+import Btn from "./Btn";
 
 export default function Login(props) {
   return (
@@ -28,7 +28,7 @@ export default function Login(props) {
               Forgot Password ?
             </Text>
           </View>
-          <Btn textColor='white' bgColor={darkGreen} btnLabel="Login" Press={() => alert("Logged In")} />
+          <Btn textColor='white' bgColor={darkGreen} btnLabel="Login" Press={() => props.navigation.navigate("Products")}/>
           <View style={{ display: 'flex', flexDirection: 'row', justifyContent: "center" }}>
             <Text style={{ fontSize: 16, fontWeight: "bold" }}>Don't have an account ? </Text>
             <TouchableOpacity onPress={() => props.navigation.navigate("Signup")}>
