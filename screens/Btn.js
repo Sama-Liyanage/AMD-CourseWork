@@ -1,5 +1,5 @@
 import React from 'react'
-import {ouchableOpacity } from 'react-native';
+import {TouchableOpacity } from 'react-native';
 
 export default function Btn() {
   return (
