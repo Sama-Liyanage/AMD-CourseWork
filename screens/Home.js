@@ -4,7 +4,7 @@ import Background from './Background';
 import Btn from './Btn';
 import { darkGreen, green } from './Constants';
 
-const Home = () => {
+const Home = (props) => {
     return (
         <Background>
             <View style={{ marginHorizontal: 40, marginVertical: 100 }}>
