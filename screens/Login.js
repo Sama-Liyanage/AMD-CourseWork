@@ -3,6 +3,7 @@ import { Text, View } from 'react-native'
 import Field from '../components/Field';
 import Background from './Background';
 import { darkGreen } from './Constants';
+import Btn from "./Btn"
 
 export default function Login() {
   return (
@@ -22,11 +23,12 @@ export default function Login() {
             secureTextEntry={true}
           />
           <View
-            style={{alignItems: 'center', width: '78%'}}>
+            style={{alignItems: 'center', width: '78%', marginBottom: 200}}>
             <Text style={{color: darkGreen, fontWeight: 'bold', fontSize: 16}}>
               Forgot Password ?
             </Text>
           </View>
+          <Btn textColor='white' bgColor={darkGreen} btnLabel="Login"/>
         </View>
       </View>
     </Background>
