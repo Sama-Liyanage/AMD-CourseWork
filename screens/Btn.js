@@ -1,10 +1,10 @@
 import React from 'react'
-import {TouchableOpacity } from 'react-native';
+import {TouchableOpacity ,Text} from 'react-native';
 
-export default function Btn() {
+
+export default function Btn({bgColor,btnLabel,textColor}) {
   return (
     <TouchableOpacity
-    onPress={Press}
       style={{
         backgroundColor: bgColor,
         borderRadius: 100,
@@ -17,5 +17,5 @@ export default function Btn() {
         {btnLabel}
       </Text>
     </TouchableOpacity>
-  )
+  );
 }
