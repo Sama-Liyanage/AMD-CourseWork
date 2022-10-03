@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Text, View ,TouchableOpacity} from 'react-native'
 import Field from '../components/Field';
 import Background from './Background';
 import { darkGreen } from './Constants';
@@ -28,7 +28,13 @@ export default function Login() {
               Forgot Password ?
             </Text>
           </View>
-          <Btn textColor='white' bgColor={darkGreen} btnLabel="Login"/>
+          <Btn textColor='white' bgColor={darkGreen} btnLabel="Login" Press={() => alert("Logged In")}/>
+          <View style={{ display: 'flex', flexDirection :'row', justifyContent: "center" }}>
+            <Text style={{ fontSize: 16, fontWeight:"bold" }}>Don't have an account ? </Text>
+            <TouchableOpacity onPress={() => props.navigation.navigate("Signup")}>
+            <Text style={{ color: darkGreen, fontWeight: 'bold', fontSize: 16 }}>Signup</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </Background>
