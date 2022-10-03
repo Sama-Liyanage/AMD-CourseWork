@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet,FlatList} from 'react-native';
+import { Text, View, StyleSheet,FlatList, SafeAreaView} from 'react-native';
 
 
 
@@ -31,14 +31,19 @@ export default function Products() {
         <Text>{item.model}</Text>
      )
 
+     headerComponent=()=>{
+        return<Text>Cars</Text>
+     }
 
     return (
-        <View>
+        <SafeAreaView>
            <FlatList
+           ListHeaderComponent={<Text>Information about Cars</Text>}
             data={cars}
-            renderItem={oneCar}/>
-            
-        </View>
+            renderItem={oneCar}
+            ListEmptyComponent={<Text>This is a list of Cars Information</Text>} />
+
+        </SafeAreaView>
     )
 }
 
