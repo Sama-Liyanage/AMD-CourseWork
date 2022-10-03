@@ -8,8 +8,9 @@ const Home = () => {
     return (
         <Background>
             <View style={{ marginHorizontal: 40, marginVertical: 100 }}>
-                <Text style={{ color: 'white', fontSize: 64 }}>Let's start Coding</Text>
-                <Btn bgColor={green} textColor='white' btnLabel="Login"/>
+                <Text style={{ color: 'white', fontSize: 64 }}>Let's start</Text>
+                <Text style={{ color: 'white', fontSize: 64 ,marginBottom: 40 }}>coding</Text>
+                <Btn bgColor={darkGreen} textColor='white' btnLabel="Login"/>
                 <Btn bgColor='white' textColor={darkGreen} btnLabel="Sign Up"/>
 
             </View>
