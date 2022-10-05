@@ -1,6 +1,6 @@
 import React from 'react'
 import { TextInput } from 'react-native-gesture-handler';
-import { darkGreen } from '../screens/Constants';
+import { darkGreen } from './Constants';
 
 const Field = props => {
     return (

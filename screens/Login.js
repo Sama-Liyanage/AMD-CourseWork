@@ -1,9 +1,9 @@
 import React from 'react'
 import { Text, View, TouchableOpacity } from 'react-native'
 import Field from '../components/Field';
-import Background from './Background';
-import { darkGreen } from './Constants';
-import Btn from "./Btn";
+import Background from '../components/Background';
+import { darkGreen } from '../components/Constants';
+import Btn from "../components/Btn";
 
 export default function Login(props) {
   return (

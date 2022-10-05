@@ -1,8 +1,8 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import Background from './Background';
-import Btn from './Btn';
-import { darkGreen, green } from './Constants';
+import Background from '../components/Background';
+import Btn from '../components/Btn';
+import { darkGreen, green } from '../components/Constants';
 
 const Home = (props) => {
     return (
