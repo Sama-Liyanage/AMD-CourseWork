@@ -1,6 +1,6 @@
 import { NativeBaseProvider, ScrollView } from 'native-base';
 import React from 'react'
-import { FlatList, SafeAreaView, Text, StyleSheet, View, Image } from 'react-native';
+import { FlatList, SafeAreaView, Text, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 import Background from '../components/Background'
 
 export default function WishList(navigation) {
@@ -73,15 +73,14 @@ export default function WishList(navigation) {
 
         <SafeAreaView>
 
-                <FlatList
-                    ListHeaderComponentStyle={styles.listHeader}
-                    ListHeaderComponent={headerComponent}
-                    data={cars}
-                    renderItem={oneCar}
-                    ItemSeparatorComponent={itemSeparator}
-                    ListEmptyComponent={<Text>This is a list of Cars Information</Text>}
-
-                />
+            <FlatList
+                ListHeaderComponentStyle={styles.listHeader}
+                ListHeaderComponent={headerComponent}
+                data={cars}
+                renderItem={oneCar}
+                ItemSeparatorComponent={itemSeparator}
+                ListEmptyComponent={<Text>This is a list of Cars Information</Text>}
+            />
         </SafeAreaView>
 
 
@@ -127,7 +126,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         marginHorizontal: 30,
         width: '80%',
-        borderRadius:20
+        borderRadius: 20
     }
 })
 
