@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity } from 'react-native'
 import Field from '../components/Field';
 import Background from '../components/Background';
 import { darkGreen } from '../components/Constants';
-import Btn from "../components/Btn"
+import Btn from "../components/Btn";
 
 export default function Signup(props) {
   return (

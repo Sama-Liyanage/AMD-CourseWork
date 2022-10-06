@@ -1,10 +1,15 @@
 import React from 'react'
-import { View ,Text} from 'react-native'
+import { View, Text } from 'react-native';
+import Background from '../components/Background';
 
 export default function AddVehicle() {
   return (
-    <View>
-        <Text>Temp</Text>
-    </View>
+    <Background>
+      <View>
+        <Text>
+          Add Vehicle
+        </Text>
+      </View>
+    </Background>
   )
 }
