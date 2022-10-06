@@ -23,29 +23,29 @@ export default function WishList(navigation) {
             model: "Suzuki AltoK10",
             currentOwner: "Mr.Gunasekara",
             image: require('../assets/images/avatars/suzuki.png'),
-            
+
         },
         {
             registration_no: "CP SKH-567",
             model: "Toyota-Prius",
             currentOwner: "Mrs.Indrani",
             image: require('../assets/images/avatars/toyotaPrius.jpg'),
-         
+
         },
         {
             registration_no: "SP RTHK-8567",
             model: "Toyota Allion",
             currentOwner: "Mr.Gunasekara",
             image: require('../assets/images/avatars/toyotaAllion.png'),
-            
+
         },
         {
             registration_no: "CP SKH-567",
             model: "Perodua Sedan",
             currentOwner: "Mrs.Indrani",
             image: require('../assets/images/avatars/peroduaSedan.jpg'),
-            
-           
+
+
         },
     ];
 
@@ -68,25 +68,32 @@ export default function WishList(navigation) {
     }
 
     return (
-      
-            <SafeAreaView>
-                    <FlatList
-                        ListHeaderComponentStyle={styles.listHeader}
-                        ListHeaderComponent={headerComponent}
-                        data={cars}
-                        renderItem={oneCar}
-                        ItemSeparatorComponent={itemSeparator}
-                        ListEmptyComponent={<Text>This is a list of Cars Information</Text>}
-                    />  
-                             
-            </SafeAreaView>
-        
+
+
+
+        <SafeAreaView>
+
+                <FlatList
+                    ListHeaderComponentStyle={styles.listHeader}
+                    ListHeaderComponent={headerComponent}
+                    data={cars}
+                    renderItem={oneCar}
+                    ItemSeparatorComponent={itemSeparator}
+                    ListEmptyComponent={<Text>This is a list of Cars Information</Text>}
+
+                />
+        </SafeAreaView>
+
+
     )
 }
 
 const styles = StyleSheet.create({
+    container: {
+        height: "100%"
+    },
     separator: {
-        marginLeft:30,
+        marginLeft: 30,
         width: '100%',
         height: 1,
         width: '80%',
@@ -103,23 +110,24 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     avatarContainer: {
-       backgroundColor:'#ffffff',
-       borderRadius:100,
-       height:89,
-       width:89,
-       justifyContent:'center',
-       alignItems:'center'
+        backgroundColor: '#ffffff',
+        borderRadius: 100,
+        height: 89,
+        width: 89,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    avatar:{
-        height:40,
-        width:70,
+    avatar: {
+        height: 40,
+        width: 70,
     },
     item: {
-        backgroundColor: '#00867d',
+        backgroundColor: '#80deea',
         padding: 20,
         marginVertical: 10,
         marginHorizontal: 30,
         width: '80%',
+        borderRadius:20
     }
 })
 
