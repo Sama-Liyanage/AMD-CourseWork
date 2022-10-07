@@ -32,7 +32,7 @@ export default function AddVehicle({ navigation }) {
   useEffect(() => {
 
     if (selectedImage == null) {
-      const exampleImage = require('../assets/icon/info.png')
+      const exampleImage = require('../assets/images/avatars/suzukicelerio.png')
       setSelectedImage(exampleImage)
     }
     getCars()
@@ -119,49 +119,45 @@ export default function AddVehicle({ navigation }) {
   }
 
   return (
-    <NativeBaseProvider >
-      <ScrollView>
-        <Image style={{ width: 80, height: 50, borderRadius: 25,}} source={selectedImage} />
-        <Text style={styles.text}>Add Vehicle</Text>
-        <TextInput style={styles.input1} placeholder='Registration Number' variant="subtle" />
-        <TextInput style={styles.input2} placeholder='Current Owner' variant="filled" />
-        <TextInput variant="filled" style={styles.input2} placeholder='Address' />
-        <TextInput variant="filled" style={styles.input2} placeholder='Model' />
-        <TextInput variant="filled" style={styles.input2} placeholder='Color' />
-        <TextInput variant="filled" style={styles.input2} placeholder='Year of Manufacture' />
-        <TextInput variant="filled" style={styles.input2} placeholder='Fuel' />
-        <TextInput variant="filled" style={styles.input2} placeholder='Price' />
-        <TextInput variant="filled" style={styles.input2} placeholder='Color' />
-        <TextInput variant="filled" style={styles.input2} placeholder='Year of Manufacture' />
-        <TextInput variant="filled" style={styles.input2} placeholder='Fuel' />
-        <TextInput variant="filled" style={styles.input2} placeholder='Price' />
-        
+    <NativeBaseProvider>
+        <ScrollView>
+          <Image style={{ width: 400, height: 200, marginLeft: 10 ,marginTop:40}} source={selectedImage} />
+          <Text style={{ color: ' #ffffff', fontSize: 20, marginVertical: 5, marginLeft:'30%'}}>Add Vehicle</Text>
+          <TextInput style={styles.input1} placeholder='Registration Number' />
+          <TextInput style={styles.input2} placeholder='Current Owner' />
+          <TextInput style={styles.input2} placeholder='Address' />
+          <TextInput style={styles.input2} placeholder='Model' />
+          <TextInput style={styles.input2} placeholder='Color' />
+          <TextInput style={styles.input2} placeholder='Year of Manufacture' />
+          <TextInput style={styles.input2} placeholder='Fuel' />
+          <TextInput style={styles.input2} placeholder='Price' />
+          <TextInput style={styles.input2} placeholder='Color' />
+          <TextInput style={styles.input2} placeholder='Year of Manufacture' />
+          <TextInput style={styles.input2} placeholder='Fuel' />
+          <TextInput style={styles.input2} placeholder='Price' />
 
 
-        <TouchableOpacity style={styles.button} onPress={openGallery}>
-          <Text style={{ color: ' #ffffff', fontSize: 20,marginVertical: 5,marginLeft:15 }}>Open Gallery</Text>
-        </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button1}>
-          <Text style={{ color: ' #ffffff', fontSize: 20 ,marginVertical: 5,marginLeft:30 }}>Save</Text>
-        </TouchableOpacity>
-      </ScrollView>
+          <TouchableOpacity style={styles.button} onPress={openGallery}>
+            <Text style={{ color: ' #ffffff', fontSize: 20, marginVertical: 5, marginLeft: 15 }}>Open Gallery</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.button1}>
+            <Text style={{ color: ' #ffffff', fontSize: 20, marginVertical: 5, marginLeft: 30 }}>Save</Text>
+          </TouchableOpacity>
+        </ScrollView>
     </NativeBaseProvider>
   )
 }
 
 const styles = StyleSheet.create({
-  text: {
-    marginLeft:100,
-    fontSize:30,
-    marginTop:30
-  },
+  
   input1: {
     borderWidth: 1,
     padding: 10,
     width: '80%',
     borderRadius: 5,
-    marginLeft:30
+    marginLeft: 30
   },
   input2: {
     marginTop: '5%',
@@ -169,7 +165,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: '80%',
     borderRadius: 5,
-    marginLeft:30
+    marginLeft: 30
   },
   button: {
     width: '40%',
@@ -179,7 +175,7 @@ const styles = StyleSheet.create({
     height: 50,
     marginTop: '7%',
     marginLeft: '25%',
-    marginBottom:'7%'
+    marginBottom: '7%'
 
   },
   button1: {
@@ -190,8 +186,8 @@ const styles = StyleSheet.create({
     height: 50,
     marginTop: '7%',
     marginLeft: '30%',
-    marginBottom:'7%'
-    
+    marginBottom: '7%'
+
 
   }
 })

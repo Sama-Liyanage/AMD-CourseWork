@@ -3,7 +3,7 @@ import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image } from 'react
 import { useEffect, useState } from 'react';
 import Background from '../components/Background';
 
-export default function WishList() {
+export default function WishList(props) {
     const [posts, setPosts] = useState([]);
 
     const cars = [
@@ -80,7 +80,7 @@ export default function WishList() {
                 ListHeaderComponent={headerComponent}
                 data={posts}
                 renderItem={({ item }) =>
-                    <TouchableOpacity style={{ borderWidth: 1,borderRadius:20, marginBottom: '5%', padding: 30 ,backgroundColor:'#e3f2fd'}} >
+                    <TouchableOpacity style={{ borderWidth: 1,borderRadius:20, marginBottom: '5%', padding: 30 ,backgroundColor:'#e3f2fd'}} Press={() => {alert('Card created')}}>
                         <Text style={{ marginBottom: 10, fontWeight: 'bold' }} >{item.model}</Text>
                         <Text style={{ marginBottom: 10 }} >{item.currentOwner}</Text>
                     </TouchableOpacity>
