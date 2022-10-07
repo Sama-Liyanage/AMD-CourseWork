@@ -70,9 +70,7 @@ export default function WishList() {
         return <Text style={styles.listHeadLine} >Vehicles</Text>
     }
 
-    itemSeparator = () => {
-        return <View style={styles.separator} />
-    }
+   
 
     return (
 
@@ -80,10 +78,9 @@ export default function WishList() {
             <FlatList
                 ListHeaderComponentStyle={styles.listHeader}
                 ListHeaderComponent={headerComponent}
-                ItemSeparatorComponent={itemSeparator}
                 data={posts}
                 renderItem={({ item }) =>
-                    <TouchableOpacity style={{ borderWidth: 1,borderRadius:20, marginBottom: '5%', padding: 30 ,backgroundColor:'#e3f2fd'}} onPress={() => { call(item) }}>
+                    <TouchableOpacity style={{ borderWidth: 1,borderRadius:20, marginBottom: '5%', padding: 30 ,backgroundColor:'#e3f2fd'}} >
                         <Text style={{ marginBottom: 10, fontWeight: 'bold' }} >{item.model}</Text>
                         <Text style={{ marginBottom: 10 }} >{item.currentOwner}</Text>
                     </TouchableOpacity>
@@ -98,13 +95,6 @@ export default function WishList() {
 const styles = StyleSheet.create({
     container: {
         padding: 30
-    },
-    separator: {
-        marginLeft: 20,
-        marginBottom: 20,
-        height: 1,
-        width: '100%',
-        backgroundColor: '#000000',
     },
     listHeader: {
         height: 55,
