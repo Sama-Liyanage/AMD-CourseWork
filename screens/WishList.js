@@ -1,36 +1,31 @@
-import { NativeBaseProvider, ScrollView } from 'native-base';
-import React from 'react'
-import { FlatList, SafeAreaView, Text, StyleSheet, View, Image, TouchableOpacity } from 'react-native';
-import Background from '../components/Background'
+import React from 'react';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image } from 'react-native'
+import { useEffect, useState } from 'react';
+import Background from '../components/Background';
 
-export default function WishList(navigation) {
+export default function WishList() {
+    const [posts, setPosts] = useState([]);
 
     const cars = [
         {
             registration_no: "SP GHJ6-7889",
             model: "Toyoya Axio",
             currentOwner: "Mr.Kamal Gunarathna",
-            image: require('../assets/images/avatars/toyotaaxio.jpg'),
         },
         {
             registration_no: "WP DJH-5612",
             model: "Mercedes",
             currentOwner: "Mr.Nimal Ekanayaka",
-            image: require('../assets/images/avatars/mercedes.png'),
         },
         {
             registration_no: "SP RTHK-8567",
             model: "Suzuki AltoK10",
             currentOwner: "Mr.Gunasekara",
-            image: require('../assets/images/avatars/suzuki.png'),
-
         },
         {
             registration_no: "CP SKH-567",
             model: "Toyota-Prius",
             currentOwner: "Mrs.Indrani",
-            image: require('../assets/images/avatars/toyotaPrius.jpg'),
-
         },
         {
             registration_no: "SP RTHK-8567",
@@ -43,24 +38,36 @@ export default function WishList(navigation) {
             registration_no: "CP SKH-567",
             model: "Perodua Sedan",
             currentOwner: "Mrs.Indrani",
-            image: require('../assets/images/avatars/peroduaSedan.jpg'),
-
-
         },
+        {
+            registration_no: "CP SKH-567",
+            model: "Perodua Sedan",
+            currentOwner: "Mrs.Indrani",
+        },
+        {
+            registration_no: "CP SKH-567",
+            model: "Perodua Sedan",
+            currentOwner: "Mrs.Indrani",
+        },
+        {
+            registration_no: "CP SKH-567",
+            model: "Perodua Sedan",
+            currentOwner: "Mrs.Indrani",
+        },
+
     ];
 
-    const oneCar = ({ item }) => (
-        <View style={styles.item}>
-            <View style={styles.avatarContainer}>
-                <Image source={item.image} style={styles.avatar} />
-            </View>
-
-            <Text style={styles.model} >{item.model}</Text>
-        </View>
+    useEffect(() => {
+        setPosts(cars);
+    }, []
     )
 
+    const call = (props) => {
+        console.log(props);
+    }
+
     headerComponent = () => {
-        return <Text style={styles.listHeadLine} >Cars</Text>
+        return <Text style={styles.listHeadLine} >Vehicles</Text>
     }
 
     itemSeparator = () => {
@@ -69,19 +76,20 @@ export default function WishList(navigation) {
 
     return (
 
-
-
-        <SafeAreaView>
-
+        <View style={styles.container}>
             <FlatList
                 ListHeaderComponentStyle={styles.listHeader}
                 ListHeaderComponent={headerComponent}
-                data={cars}
-                renderItem={oneCar}
                 ItemSeparatorComponent={itemSeparator}
-                ListEmptyComponent={<Text>This is a list of Cars Information</Text>}
+                data={posts}
+                renderItem={({ item }) =>
+                    <TouchableOpacity style={{ borderWidth: 1,borderRadius:20, marginBottom: '5%', padding: 30 ,backgroundColor:'#e3f2fd'}} onPress={() => { call(item) }}>
+                        <Text style={{ marginBottom: 10, fontWeight: 'bold' }} >{item.model}</Text>
+                        <Text style={{ marginBottom: 10 }} >{item.currentOwner}</Text>
+                    </TouchableOpacity>
+                }
             />
-        </SafeAreaView>
+        </View>
 
 
     )
@@ -89,45 +97,46 @@ export default function WishList(navigation) {
 
 const styles = StyleSheet.create({
     container: {
-        height: "100%"
+        padding: 30
     },
     separator: {
-        marginLeft: 30,
-        width: '100%',
+        marginLeft: 20,
+        marginBottom: 20,
         height: 1,
-        width: '80%',
+        width: '100%',
         backgroundColor: '#000000',
     },
     listHeader: {
         height: 55,
         alignItems: 'center',
         justifyContent: 'center',
+        marginBottom: 30
     },
     listHeadLine: {
         color: 'listHeadLine',
-        fontSize: 21,
-        fontWeight: 'bold'
+        fontSize: 30,
+        fontWeight: 'bold',
+        color: '#000000',
     },
-    avatarContainer: {
-        backgroundColor: '#ffffff',
-        borderRadius: 100,
-        height: 89,
-        width: 89,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    avatar: {
-        height: 40,
-        width: 70,
-    },
+    // avatarContainer: {
+    //     backgroundColor: '#ffffff',
+    //     borderRadius: 100,
+    //     height: 89,
+    //     width: 89,
+    //     justifyContent: 'center',
+    //     alignItems: 'center'
+    // },
+    // avatar: {
+    //     height: 40,
+    //     width: 70,
+    // },
     item: {
-        backgroundColor: '#80deea',
+        backgroundColor: '#4a148c',
         padding: 20,
         marginVertical: 10,
         marginHorizontal: 30,
-        width: '80%',
+        width: '10%',
         borderRadius: 20
     }
 })
-
 

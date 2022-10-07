@@ -1,27 +1,10 @@
-import { View, Text, FlatList,TouchableOpacity } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { View ,Text} from 'react-native'
 
-export default function VehiclDetails() {
-
-    const [posts, setPosts] = useState([]);
-
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then((response) => response.json())
-            .then((json) => setPosts(json));
-    })
-
-    return (
-        <View style={{padding:20}}>
-            <FlatList
-                data={posts}
-                renderItem={({ item }) =>
-                    <TouchableOpacity style={{borderWidth:1, marginBottom:'5%', padding:5}} onPress={()=>{console.log("hello");}}>
-                        <Text style={{marginBottom:10,fontWeight:'bold'}} >{item.title}</Text>
-                        <Text style={{marginBottom:10}} >{item.body}</Text>
-                    </TouchableOpacity>
-                }
-            />
-        </View>
-    )
+export default function VehicleDetails() {
+  return (
+    <View>
+        <Text>Hiii</Text>
+    </View>
+  )
 }
