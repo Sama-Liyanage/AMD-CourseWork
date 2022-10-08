@@ -131,13 +131,7 @@ export default function AddVehicle({ navigation }) {
           <TextInput style={styles.input2} placeholder='Year of Manufacture' />
           <TextInput style={styles.input2} placeholder='Fuel' />
           <TextInput style={styles.input2} placeholder='Price' />
-          <TextInput style={styles.input2} placeholder='Color' />
-          <TextInput style={styles.input2} placeholder='Year of Manufacture' />
-          <TextInput style={styles.input2} placeholder='Fuel' />
-          <TextInput style={styles.input2} placeholder='Price' />
-
-
-
+          
           <TouchableOpacity style={styles.button} onPress={openGallery}>
             <Text style={{ color: ' #ffffff', fontSize: 20, marginVertical: 5, marginLeft: 15 }}>Open Gallery</Text>
           </TouchableOpacity>

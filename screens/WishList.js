@@ -9,23 +9,27 @@ export default function WishList(props) {
     const cars = [
         {
             registration_no: "SP GHJ6-7889",
-            model: "Toyoya Axio",
+            model: "Toyota Axio",
             currentOwner: "Mr.Kamal Gunarathna",
+            image: require('../assets/images/avatars/toyotaaxio.jpg'),
         },
         {
             registration_no: "WP DJH-5612",
             model: "Mercedes",
             currentOwner: "Mr.Nimal Ekanayaka",
+            image: require('../assets/images/avatars/mercedes.png'),
         },
         {
             registration_no: "SP RTHK-8567",
             model: "Suzuki AltoK10",
             currentOwner: "Mr.Gunasekara",
+            image: require('../assets/images/avatars/suzuki.png'),
         },
         {
             registration_no: "CP SKH-567",
             model: "Toyota-Prius",
             currentOwner: "Mrs.Indrani",
+            image: require('../assets/images/avatars/toyotaPrius.jpg'),
         },
         {
             registration_no: "SP RTHK-8567",
@@ -38,24 +42,12 @@ export default function WishList(props) {
             registration_no: "CP SKH-567",
             model: "Perodua Sedan",
             currentOwner: "Mrs.Indrani",
-        },
-        {
-            registration_no: "CP SKH-567",
-            model: "Perodua Sedan",
-            currentOwner: "Mrs.Indrani",
-        },
-        {
-            registration_no: "CP SKH-567",
-            model: "Perodua Sedan",
-            currentOwner: "Mrs.Indrani",
-        },
-        {
-            registration_no: "CP SKH-567",
-            model: "Perodua Sedan",
-            currentOwner: "Mrs.Indrani",
+            image: require('../assets/images/avatars/peroduaSedan.jpg'),
         },
 
+
     ];
+
 
     useEffect(() => {
         setPosts(cars);
@@ -70,7 +62,7 @@ export default function WishList(props) {
         return <Text style={styles.listHeadLine} >Vehicles</Text>
     }
 
-   
+
 
     return (
 
@@ -80,9 +72,13 @@ export default function WishList(props) {
                 ListHeaderComponent={headerComponent}
                 data={posts}
                 renderItem={({ item }) =>
-                    <TouchableOpacity style={{ borderWidth: 1,borderRadius:20, marginBottom: '5%', padding: 30 ,backgroundColor:'#e3f2fd'}} Press={() => {alert('Card created')}}>
-                        <Text style={{ marginBottom: 10, fontWeight: 'bold' }} >{item.model}</Text>
-                        <Text style={{ marginBottom: 10 }} >{item.currentOwner}</Text>
+                    <TouchableOpacity style={{ borderWidth: 1, borderRadius: 20, marginBottom: '5%', padding: 30, backgroundColor: '#4fb3bf' }}
+                        onPress={() => props.navigation.navigate("VehicleDetails", { obj: item.registration_no })} >
+                        {/* <View style={{ alignItems: "center", justifyContent: "center", height: 40 }}> */}
+
+                        <Text style={{ marginBottom: 10, fontWeight: 'bold' ,fontSize:20 ,marginLeft:70}} >{item.model}</Text>
+
+                        {/* </View> */}
                     </TouchableOpacity>
                 }
             />
@@ -122,7 +118,7 @@ const styles = StyleSheet.create({
     // },
     item: {
         backgroundColor: '#4a148c',
-        padding: 20,
+        padding: 0,
         marginVertical: 10,
         marginHorizontal: 30,
         width: '10%',

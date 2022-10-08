@@ -6,6 +6,7 @@ import Home from './screens/Home';
 import Signup from './screens/Signup';
 import Login from './screens/Login';
 import Dashboard from './screens/Dashboard';
+import VehicleDetails from './screens/VehicleDetails';
 
 
 
@@ -19,8 +20,7 @@ function App() {
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Dashboard" component={Dashboard} />
-      
-
+        <Stack.Screen name="VehicleDetails" component={VehicleDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );
